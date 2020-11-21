@@ -14,7 +14,11 @@
   <div class="container">
     <h1>{% block header %} Welcome to my page! {% endblock%}</h1>
     <p>{% block para %} this is my flask project page {% endblock %}</p>
-    {% block anchor %}<a href={{url_for('jokes')}}> Jokes</a> {% endblock%}
+    {% block anchor %}
+    <a href={{url_for('jokes')}}> Jokes</a>
+    <a href="{{url_for('contact')}}"> Contact</a>
+    {% endblock%}
+    {% block form %} {% endblock %}
   </div>
 </body>
 

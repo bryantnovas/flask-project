@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} Contact {% endblock %}
+{% block header %} Contact me! {% endblock %}
+{% block para %} {{ joke }} {% endblock %}
+{% block anchor %}<a href={{url_for('home')}}> Home</a> {% endblock%}
+
+{% block form %}
+<form action="/contact" method="post">
+  <label for="name">Name: </label>
+  <input type="text" name="name" placeholder="Type here...">
+  <label for="email">Email: </label>
+  <input type="email" name="email" placeholder="Type here...">
+  <br>
+  <textarea name="message" cols="30" rows="60" placeholder="Your message here.."></textarea>
+  <br>
+  <input type="submit" value="Submit" class="button-primary">
+</form>
+{% if name %}
+<p>{{ name }}</p>
+<p>{{ email }}</p>
+<p> {{ message }}</p>
+{% endif%}
+{% endblock %}
